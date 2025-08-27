@@ -2,6 +2,8 @@ import { Mail, Phone, MapPin, Globe, Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
+const lyceumLogoUrl = "/lovable-uploads/a0d21212-ac82-4254-99f4-0fbc32d5d818.png";
+
 const Footer = () => {
   const branches = [
     { name: "Nugegoda", type: "Day Care", address: "14/8 Pietersz Pl, Nugegoda" },
@@ -25,7 +27,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-secondary mb-2">Lyceum Day Care</h3>
+              <img 
+                src={lyceumLogoUrl} 
+                alt="Lyceum Day Care Logo" 
+                className="h-16 w-auto mb-4"
+              />
               <p className="text-primary-foreground/80 leading-relaxed">
                 Creating a safe, nurturing, and educational environment for children across Sri Lanka.
               </p>

@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 
+const lyceumLogoUrl = "/lovable-uploads/a0d21212-ac82-4254-99f4-0fbc32d5d818.png";
+
 const Hero = () => {
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -21,7 +23,16 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary-foreground animate-float">
+          {/* Logo */}
+          <div className="mb-8 animate-float">
+            <img 
+              src={lyceumLogoUrl} 
+              alt="Lyceum Day Care Logo" 
+              className="h-24 md:h-32 w-auto mx-auto drop-shadow-2xl"
+            />
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary-foreground animate-bounce-soft">
             Trusted Care,{" "}
             <span className="text-secondary drop-shadow-lg">Bright Futures</span>
           </h1>
