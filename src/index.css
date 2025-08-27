@@ -28,10 +28,10 @@ All colors MUST be HSL.
     --secondary-foreground: 342 15% 25%;
     --secondary-light: 45 100% 85%;
 
-    /* Accent: Calming blue for trust and stability */
-    --accent: 200 100% 65%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 200 100% 85%;
+    /* Accent: Sky blue for warmth and friendliness */
+    --accent: 195 71% 73%;
+    --accent-foreground: 342 15% 25%;
+    --accent-light: 195 71% 85%;
 
     /* Success: Fresh green for growth and learning */
     --success: 142 76% 56%;
@@ -101,9 +101,9 @@ All colors MUST be HSL.
     --secondary-foreground: 342 15% 8%;
     --secondary-light: 45 100% 85%;
 
-    --accent: 200 100% 65%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 200 100% 85%;
+    --accent: 195 71% 73%;
+    --accent-foreground: 342 15% 8%;
+    --accent-light: 195 71% 85%;
 
     --success: 142 76% 56%;
     --success-foreground: 0 0% 100%;
