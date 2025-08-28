@@ -21,7 +21,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-primary-foreground py-16">
+    <footer className="bg-background border-t border-border py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -32,7 +32,7 @@ const Footer = () => {
                 alt="Lyceum Day Care Logo" 
                 className="h-16 w-auto mb-4"
               />
-              <p className="text-primary-foreground/80 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Creating a safe, nurturing, and educational environment for children across Sri Lanka.
               </p>
             </div>
@@ -40,15 +40,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-secondary" />
-                <span className="text-sm">011 738 5000</span>
+                <span className="text-sm text-foreground">011 738 5000</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-secondary" />
-                <span className="text-sm">student_admissions@lyceum.lk</span>
+                <span className="text-sm text-foreground">student_admissions@lyceum.lk</span>
               </div>
               <div className="flex items-center gap-3">
                 <Globe className="w-4 h-4 text-secondary" />
-                <span className="text-sm">www.lyceum.lk</span>
+                <span className="text-sm text-foreground">www.lyceum.lk</span>
               </div>
             </div>
           </div>
@@ -59,28 +59,28 @@ const Footer = () => {
             <div className="space-y-2">
               <Button 
                 variant="ghost" 
-                className="justify-start p-0 h-auto text-primary-foreground/80 hover:text-secondary hover:bg-transparent"
+                className="justify-start p-0 h-auto text-muted-foreground hover:text-secondary hover:bg-transparent"
                 onClick={() => scrollToSection('about')}
               >
                 About Us
               </Button>
               <Button 
                 variant="ghost" 
-                className="justify-start p-0 h-auto text-primary-foreground/80 hover:text-secondary hover:bg-transparent"
+                className="justify-start p-0 h-auto text-muted-foreground hover:text-secondary hover:bg-transparent"
                 onClick={() => scrollToSection('services')}
               >
                 Our Services
               </Button>
               <Button 
                 variant="ghost" 
-                className="justify-start p-0 h-auto text-primary-foreground/80 hover:text-secondary hover:bg-transparent"
+                className="justify-start p-0 h-auto text-muted-foreground hover:text-secondary hover:bg-transparent"
                 onClick={() => scrollToSection('branches')}
               >
                 Branches
               </Button>
               <Button 
                 variant="ghost" 
-                className="justify-start p-0 h-auto text-primary-foreground/80 hover:text-secondary hover:bg-transparent"
+                className="justify-start p-0 h-auto text-muted-foreground hover:text-secondary hover:bg-transparent"
                 onClick={() => scrollToSection('contact')}
               >
                 Contact Us
@@ -93,12 +93,12 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-secondary">Our Branches</h4>
             <div className="space-y-2">
               {branches.slice(0, 6).map((branch, index) => (
-                <div key={index} className="text-sm text-primary-foreground/80">
-                  <span className="font-medium">{branch.name}</span>
+                <div key={index} className="text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">{branch.name}</span>
                   <span className="text-secondary ml-2">({branch.type})</span>
                 </div>
               ))}
-              <div className="text-sm text-primary-foreground/60">
+              <div className="text-sm text-muted-foreground">
                 + {branches.length - 6} more locations
               </div>
             </div>
@@ -110,8 +110,8 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-secondary mt-1 flex-shrink-0" />
-                <div className="text-sm text-primary-foreground/80">
-                  <div className="font-medium">Lyceum Day Care</div>
+                <div className="text-sm text-muted-foreground">
+                  <div className="font-medium text-foreground">Lyceum Day Care</div>
                   <div>14/8 Pietersz Pl, Nugegoda</div>
                 </div>
               </div>
@@ -123,7 +123,7 @@ const Footer = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="w-8 h-8 text-primary-foreground/80 hover:text-secondary hover:bg-secondary/20"
+                  className="w-8 h-8 text-muted-foreground hover:text-secondary hover:bg-secondary/20"
                   asChild
                 >
                   <a 
@@ -138,7 +138,7 @@ const Footer = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="w-8 h-8 text-primary-foreground/80 hover:text-secondary hover:bg-secondary/20"
+                  className="w-8 h-8 text-muted-foreground hover:text-secondary hover:bg-secondary/20"
                   asChild
                 >
                   <a 
@@ -155,13 +155,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <Separator className="bg-primary-foreground/20 mb-8" />
+        <Separator className="bg-border mb-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-primary-foreground/60">
+          <div className="text-sm text-muted-foreground">
             © 2024 Lyceum Day Care. All rights reserved.
           </div>
-          <div className="text-sm text-primary-foreground/60">
+          <div className="text-sm text-muted-foreground">
             Providing quality child care across Sri Lanka since 2014
           </div>
         </div>
