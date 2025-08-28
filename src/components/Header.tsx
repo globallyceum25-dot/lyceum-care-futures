@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const lyceumLogoUrl = "/lovable-uploads/a0d21212-ac82-4254-99f4-0fbc32d5d818.png";
 
@@ -57,6 +58,7 @@ const Header = () => {
             >
               Why Choose Us
             </Button>
+            <ThemeToggle />
             <Button 
               variant="hero" 
               onClick={scrollToContact}
@@ -67,14 +69,16 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button 
-            variant="hero" 
-            size="sm"
-            onClick={scrollToContact}
-            className="md:hidden"
-          >
-            Enroll Now
-          </Button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={scrollToContact}
+            >
+              Enroll Now
+            </Button>
+          </div>
         </div>
       </div>
     </header>
