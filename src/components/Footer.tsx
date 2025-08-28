@@ -21,8 +21,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-background border-t border-border py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-muted/40 border-t border-border py-16 relative">
+      <div className="absolute inset-0 bg-gradient-subtle opacity-60"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="space-y-6">
@@ -39,15 +40,15 @@ const Footer = () => {
             
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-secondary" />
+                <Phone className="w-4 h-4 text-primary" />
                 <span className="text-sm text-foreground">011 738 5000</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-secondary" />
+                <Mail className="w-4 h-4 text-primary" />
                 <span className="text-sm text-foreground">student_admissions@lyceum.lk</span>
               </div>
               <div className="flex items-center gap-3">
-                <Globe className="w-4 h-4 text-secondary" />
+                <Globe className="w-4 h-4 text-primary" />
                 <span className="text-sm text-foreground">www.lyceum.lk</span>
               </div>
             </div>
@@ -55,32 +56,32 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-secondary">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-primary">Quick Links</h4>
             <div className="space-y-2">
               <Button 
                 variant="ghost" 
-                className="justify-start p-0 h-auto text-muted-foreground hover:text-secondary hover:bg-transparent"
+                className="justify-start p-0 h-auto text-muted-foreground hover:text-primary hover:bg-transparent transition-smooth"
                 onClick={() => scrollToSection('about')}
               >
                 About Us
               </Button>
               <Button 
                 variant="ghost" 
-                className="justify-start p-0 h-auto text-muted-foreground hover:text-secondary hover:bg-transparent"
+                className="justify-start p-0 h-auto text-muted-foreground hover:text-primary hover:bg-transparent transition-smooth"
                 onClick={() => scrollToSection('services')}
               >
                 Our Services
               </Button>
               <Button 
                 variant="ghost" 
-                className="justify-start p-0 h-auto text-muted-foreground hover:text-secondary hover:bg-transparent"
+                className="justify-start p-0 h-auto text-muted-foreground hover:text-primary hover:bg-transparent transition-smooth"
                 onClick={() => scrollToSection('branches')}
               >
                 Branches
               </Button>
               <Button 
                 variant="ghost" 
-                className="justify-start p-0 h-auto text-muted-foreground hover:text-secondary hover:bg-transparent"
+                className="justify-start p-0 h-auto text-muted-foreground hover:text-primary hover:bg-transparent transition-smooth"
                 onClick={() => scrollToSection('contact')}
               >
                 Contact Us
@@ -90,12 +91,12 @@ const Footer = () => {
 
           {/* Branches */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-secondary">Our Branches</h4>
+            <h4 className="text-lg font-semibold text-primary">Our Branches</h4>
             <div className="space-y-2">
               {branches.slice(0, 6).map((branch, index) => (
                 <div key={index} className="text-sm text-muted-foreground">
                   <span className="font-medium text-foreground">{branch.name}</span>
-                  <span className="text-secondary ml-2">({branch.type})</span>
+                  <span className="text-accent ml-2">({branch.type})</span>
                 </div>
               ))}
               <div className="text-sm text-muted-foreground">
@@ -106,10 +107,10 @@ const Footer = () => {
 
           {/* Main Branch & Social */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-secondary">Main Branch</h4>
+            <h4 className="text-lg font-semibold text-primary">Main Branch</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-secondary mt-1 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                 <div className="text-sm text-muted-foreground">
                   <div className="font-medium text-foreground">Lyceum Day Care</div>
                   <div>14/8 Pietersz Pl, Nugegoda</div>
@@ -118,12 +119,12 @@ const Footer = () => {
             </div>
 
             <div className="space-y-3">
-              <h5 className="font-semibold text-secondary">Follow Us</h5>
+              <h5 className="font-semibold text-primary">Follow Us</h5>
               <div className="flex gap-3">
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="w-8 h-8 text-muted-foreground hover:text-secondary hover:bg-secondary/20"
+                  className="w-8 h-8 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-smooth"
                   asChild
                 >
                   <a 
@@ -138,7 +139,7 @@ const Footer = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="w-8 h-8 text-muted-foreground hover:text-secondary hover:bg-secondary/20"
+                  className="w-8 h-8 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-smooth"
                   asChild
                 >
                   <a 
