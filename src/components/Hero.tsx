@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+
+const heroImageUrl = "/lovable-uploads/dc4a70ce-28a7-4c9e-87af-531dc50e7d4b.png";
 
 const lyceumLogoUrl = "/lovable-uploads/a0d21212-ac82-4254-99f4-0fbc32d5d818.png";
 
@@ -13,7 +14,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
+          src={heroImageUrl}
           alt="Happy children learning at Lyceum Day Care"
           className="w-full h-full object-cover"
         />

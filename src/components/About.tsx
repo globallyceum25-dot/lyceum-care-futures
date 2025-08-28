@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Heart, Users, Award } from "lucide-react";
-import activitiesImage from "@/assets/activities-image.jpg";
+
+const activitiesImageUrl = "/lovable-uploads/a2ac8c02-ec15-42c2-9ec7-6ea72ad96670.png";
 
 const About = () => {
   const stats = [
@@ -42,7 +43,7 @@ const About = () => {
           
           <div className="relative">
             <img
-              src={activitiesImage}
+              src={activitiesImageUrl}
               alt="Children engaged in educational activities"
               className="rounded-2xl shadow-primary w-full h-[400px] object-cover"
             />

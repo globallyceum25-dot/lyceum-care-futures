@@ -15,7 +15,8 @@ import {
   Users,
   Zap
 } from "lucide-react";
-import careImage from "@/assets/care-image.jpg";
+
+const careImageUrl = "/lovable-uploads/488bb204-70cf-4af9-bc4c-0ab220ed6643.png";
 
 const Services = () => {
   const dayCareFeatures = [
@@ -82,7 +83,7 @@ const Services = () => {
               </div>
               <div className="relative">
                 <img
-                  src={careImage}
+                  src={careImageUrl}
                   alt="Day care facilities"
                   className="rounded-2xl shadow-primary w-full h-[300px] object-cover"
                 />
