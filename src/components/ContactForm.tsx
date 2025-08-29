@@ -198,9 +198,22 @@ const ContactForm = () => {
                       <Input id="childName" required className="border-border focus:border-primary" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="dob">Date of Birth *</Label>
-                      <Input id="dob" type="date" required className="border-border focus:border-primary" />
+                      <Label htmlFor="gender">Gender *</Label>
+                      <Select required>
+                        <SelectTrigger className="border-border focus:border-primary">
+                          <SelectValue placeholder="Select gender" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="male">Male</SelectItem>
+                          <SelectItem value="female">Female</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="dob">Date of Birth *</Label>
+                    <Input id="dob" type="date" required className="border-border focus:border-primary" />
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">

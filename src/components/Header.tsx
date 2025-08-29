@@ -24,7 +24,7 @@ const Header = () => {
             <img 
               src={lyceumLogoUrl} 
               alt="Lyceum Day Care Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </div>
 

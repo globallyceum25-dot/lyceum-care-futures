@@ -38,7 +38,7 @@ const Hero = () => {
             <span className="text-secondary drop-shadow-lg">Bright Futures</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed font-montserrat">
             Providing safe, nurturing, and educational care for your little ones across Sri Lanka
           </p>
 
