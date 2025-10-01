@@ -23,19 +23,60 @@ const ContactForm = () => {
     "Ratnapura (After School)"
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    toast({
-      title: "Application Submitted Successfully!",
-      description: "We'll contact you within 24 hours to discuss your child's enrollment.",
-    });
-    
-    setIsSubmitting(false);
+    try {
+      const formData = new FormData(e.currentTarget);
+      const data = {
+        // Parent Information
+        parentName: formData.get('parentName'),
+        relationship: formData.get('relationship'),
+        address: formData.get('address'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        preferredBranch: formData.get('branch'),
+        // Child Information
+        childName: formData.get('childName'),
+        gender: formData.get('gender'),
+        dateOfBirth: formData.get('dob'),
+        age: formData.get('age'),
+        school: formData.get('school'),
+        medicalNotes: formData.get('medical'),
+        // Timestamp
+        timestamp: new Date().toISOString(),
+      };
+
+      // Google Sheets Web App URL (Deploy as Web App from Google Apps Script)
+      const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbz_YOUR_DEPLOYMENT_ID/exec";
+      
+      const response = await fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      toast({
+        title: "Application Submitted Successfully!",
+        description: "We'll contact you within 24 hours to discuss your child's enrollment.",
+      });
+
+      // Reset form
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an issue submitting your application. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,7 +108,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Phone Numbers</div>
-                    <div className="text-muted-foreground">011 738 5000</div>
+                    <div className="text-muted-foreground">011 738 5000 - Admissions</div>
                     <div className="text-muted-foreground">0117928977</div>
                     <div className="text-muted-foreground">0766632153</div>
                   </div>
@@ -137,11 +178,11 @@ const ContactForm = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="parentName">Full Name *</Label>
-                      <Input id="parentName" required className="border-border focus:border-primary" />
+                      <Input id="parentName" name="parentName" required className="border-border focus:border-primary" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="relationship">Relationship to Child *</Label>
-                      <Select required>
+                      <Select name="relationship" required>
                         <SelectTrigger className="border-border focus:border-primary">
                           <SelectValue placeholder="Select relationship" />
                         </SelectTrigger>
@@ -157,23 +198,23 @@ const ContactForm = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="address">Address *</Label>
-                    <Textarea id="address" required className="border-border focus:border-primary" />
+                    <Textarea id="address" name="address" required className="border-border focus:border-primary" />
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number *</Label>
-                      <Input id="phone" type="tel" required className="border-border focus:border-primary" />
+                      <Input id="phone" name="phone" type="tel" required className="border-border focus:border-primary" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email Address *</Label>
-                      <Input id="email" type="email" required className="border-border focus:border-primary" />
+                      <Input id="email" name="email" type="email" required className="border-border focus:border-primary" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="branch">Preferred Branch *</Label>
-                    <Select required>
+                    <Select name="branch" required>
                       <SelectTrigger className="border-border focus:border-primary">
                         <SelectValue placeholder="Select preferred branch" />
                       </SelectTrigger>
@@ -195,11 +236,11 @@ const ContactForm = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="childName">Child's Full Name *</Label>
-                      <Input id="childName" required className="border-border focus:border-primary" />
+                      <Input id="childName" name="childName" required className="border-border focus:border-primary" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="gender">Gender *</Label>
-                      <Select required>
+                      <Select name="gender" required>
                         <SelectTrigger className="border-border focus:border-primary">
                           <SelectValue placeholder="Select gender" />
                         </SelectTrigger>
@@ -213,24 +254,25 @@ const ContactForm = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="dob">Date of Birth *</Label>
-                    <Input id="dob" type="date" required className="border-border focus:border-primary" />
+                    <Input id="dob" name="dob" type="date" required className="border-border focus:border-primary" />
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="age">Age *</Label>
-                      <Input id="age" type="number" min="1" max="12" required className="border-border focus:border-primary" />
+                      <Input id="age" name="age" type="number" min="1" max="12" required className="border-border focus:border-primary" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="school">School / Grade</Label>
-                      <Input id="school" className="border-border focus:border-primary" />
+                      <Input id="school" name="school" className="border-border focus:border-primary" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="medical">Allergies / Medical Notes</Label>
                     <Textarea 
-                      id="medical" 
+                      id="medical"
+                      name="medical" 
                       placeholder="Please mention any allergies, medical conditions, or special requirements..."
                       className="border-border focus:border-primary"
                     />
