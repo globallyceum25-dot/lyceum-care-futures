@@ -1,12 +1,16 @@
-# Google Sheets Integration Setup Guide
+# Google Sheets Integration - COMPLETE SETUP REQUIRED
 
-## Overview
-The enrollment form is configured to send data directly to your Google Spreadsheet. Follow these steps to complete the setup.
+## ⚠️ IMPORTANT: Integration Not Yet Active
+Your enrollment form is ready but needs ONE final step to connect to Google Sheets.
+
+**What you need to do:** Deploy a Google Apps Script web app and update the URL in the code (5-10 minutes)
 
 ## Your Google Spreadsheet
 Spreadsheet URL: https://docs.google.com/spreadsheets/d/1Yf5S949IZzQsuWfopvDme5gSxfhxV7mdnVpPUczpG2s/edit?gid=0#gid=0
 
-## Setup Instructions
+---
+
+## Step-by-Step Setup Instructions
 
 ### Step 1: Open Google Apps Script
 1. Open your Google Spreadsheet
@@ -83,14 +87,17 @@ function doPost(e) {
 5. Click **Deploy**
 6. **Copy the Web App URL** - you'll need this in the next step
 
-### Step 4: Update the Form Code
-1. Open the file `src/components/ContactForm.tsx`
-2. Find line 51 which contains:
-   ```javascript
-   const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbz_YOUR_DEPLOYMENT_ID/exec";
+### Step 4: Update the Form Code (CRITICAL STEP)
+1. After deploying, you'll get a URL that looks like:
    ```
-3. Replace the URL with the Web App URL you copied in Step 3
-4. Save the file
+   https://script.google.com/macros/s/AKfycby...LONG_ID.../exec
+   ```
+2. **COPY THIS ENTIRE URL**
+3. Come back to this chat and paste it with this message:
+   ```
+   Update the form with this URL: [paste your URL here]
+   ```
+4. I'll automatically update your ContactForm.tsx file with the correct URL
 
 ### Step 5: Test the Integration
 1. Go to your website

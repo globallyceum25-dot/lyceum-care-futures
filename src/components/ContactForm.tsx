@@ -48,7 +48,8 @@ const ContactForm = () => {
         timestamp: new Date().toISOString(),
       };
 
-      // Google Sheets Web App URL (Deploy as Web App from Google Apps Script)
+      // ⚠️ IMPORTANT: Replace this URL with your Google Apps Script deployment URL
+      // Follow instructions in GOOGLE_SHEETS_SETUP.md to get your URL
       const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbz_YOUR_DEPLOYMENT_ID/exec";
       
       const response = await fetch(GOOGLE_SHEETS_URL, {
